@@ -4,6 +4,15 @@
     padding: 0;
 }
 
-h1{
-    color: #333;
+header{
+    background: url(/pexels-karolina-grabowska-5422797.jpg) center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav{
+    display: none;
 }
