@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: "Rubik", sans-serif;;
 }
 
 /* // <uniquifier>: Use a unique and descriptive class name
@@ -24,13 +25,69 @@
   font-style: normal;
 } */
 
-header{
-    background: url(/pexels-karolina-grabowska-5422797.jpg) center/cover no-repeat;
+/* .nanum-myeongjo-regular {
+    font-family: "Nanum Myeongjo", serif;
+    font-weight: 400;
+    font-style: normal;
+  } */
+  
+
+  header {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    animation: backgroundSlide 30s infinite; /* Animation totale plus longue */
+    transition: background 0.8s ease-in-out; /* Transition plus rapide entre les images */
+}
+
+/* Animation de changement d'images avec transitions rapides */
+@keyframes backgroundSlide {
+    0% {
+        background-image: url(/quatres.jpg);
+        transform: scale(1);
+        opacity: 1;
+    }
+    5% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+    10% {
+        background-image: url(/pexels-karolina-grabowska-5422797.jpg);
+        opacity: 1;
+        transform: scale(1);
+    }
+    35% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+    40% {
+        background-image: url(/deux.jpg);
+        opacity: 1;
+        transform: scale(1);
+    }
+    65% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+    70% {
+        background-image: url(/trois.jpg);
+        opacity: 1;
+        transform: scale(1);
+    }
+    95% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+    100% {
+        background-image: url(/quatres.jpg);
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 header > nav:nth-child(1){
@@ -92,4 +149,77 @@ header div button{
 header.last{
     background-color: blueviolet;
     width: 100%;
+}
+
+main #laptop{
+    display: none;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee;
+    flex-direction: column;
+}
+
+main > div:nth-child(1){
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 50px;
+}
+
+main > div:nth-child(1) div:nth-child(1) h2{
+    font-family: "Nanum Myeongjo", serif;
+    font-weight: 600;
+    color: #444;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+main > div:nth-child(1) div:nth-child(1) p{
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+    color: #666;
+    font-size: 0.6rem;
+    letter-spacing: 1px;
+}
+
+main > div:nth-child(1) #iuna{
+
+    background: url(/pexels-karolina-grabowska-5422797.jpg) center/cover no-repeat;
+    width: 100%;
+    max-width: 500px;
+    height: 500px
+
+}
+
+main > div:nth-child(1) div:nth-child(3){
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 20px;
+}
+
+main > div:nth-child(1) div:nth-child(3) p{
+    color: #777;
+    font-size: 0.7rem;
+    
+}
+
+main > div:nth-child(1) a{
+    text-decoration: none;
+    color: #eee;
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
+    
+    font-size: 0.6rem;
+    padding: 10px 25px;
+    letter-spacing: 1px;
+    background-color: #666;
+    border: none;
 }
