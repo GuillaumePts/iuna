@@ -49,6 +49,7 @@
     align-items: center;
     animation: backgroundSlide 10s infinite; /* Animation totale de 32s pour 8s par image */
     transition: 0.1s linear; /* Transition rapide */
+    position: relative;
 }
 
 /* Animation fluide avec 8 secondes de visibilité par image */
@@ -74,18 +75,56 @@ header > nav:nth-child(1){
     display: none;
 }
 
-header > #burger{
+header > #cont_burger{
     width: 100%;
     display: flex;
     justify-content: end;
-    align-items: center;
+    align-items: end;
+    z-index: 2;
 }
 
-header > #burger span{
+header > #cont_burger #burger{
     color: #eee;
-    padding: 20px;
+    padding: 10px;
+    margin: 20px;
     font-size: 2rem;
-    filter: drop-shadow(4px 4px 7px rgba(0, 0, 0, 0.712));
+    /* filter: drop-shadow(4px 4px 7px rgba(0, 0, 0, 0.712)); */
+    box-shadow: 0px 0px 30px rgba(227,228,237,0.37);
+    backdrop-filter: blur(10px);
+    mask-image: radial-gradient(circle, black 60%, transparent 100%);
+    -webkit-mask-image: radial-gradient(circle, black 60%, transparent 100%);
+    border-radius: 50px;
+}
+
+header #nav{
+    position: absolute;
+    padding: 30px 20px;
+    left: -1px;
+    top: -1px;
+    width: 200px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    box-shadow: 0px 0px 30px rgba(227,228,237,0.37);
+    backdrop-filter: blur(10px);
+    mask-image: radial-gradient(circle, black 60%, transparent 100%);
+    -webkit-mask-image: radial-gradient(circle, black 60%, transparent 100%);
+
+   
+}
+
+header #nav a{
+    text-decoration: none;
+    color: #eee;
+    padding: 10px 50px;
+    /* box-shadow: 0px 0px 30px rgba(227,228,237,0.37);
+    backdrop-filter: blur(10px);
+    mask-image: radial-gradient(circle, black 60%, transparent 100%);
+    -webkit-mask-image: radial-gradient(circle, black 60%, transparent 100%); */
+   
+    
 }
 
 header div{
