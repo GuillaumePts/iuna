@@ -31,6 +31,12 @@
     font-style: normal;
   } */
   
+  /* .cormorant-upright-light {
+    font-family: "Cormorant Upright", serif;
+    font-weight: 300;
+    font-style: normal;
+  } */
+
 
   header {
     background-size: cover;
@@ -41,55 +47,29 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    animation: backgroundSlide 30s infinite; /* Animation totale plus longue */
-    transition: background 0.8s ease-in-out; /* Transition plus rapide entre les images */
+    animation: backgroundSlide 10s infinite; /* Animation totale de 32s pour 8s par image */
+    transition: 0.1s linear; /* Transition rapide */
 }
 
-/* Animation de changement d'images avec transitions rapides */
+/* Animation fluide avec 8 secondes de visibilité par image */
 @keyframes backgroundSlide {
-    0% {
+    0%{
         background-image: url(/quatres.jpg);
-        transform: scale(1);
-        opacity: 1;
     }
-    5% {
-        opacity: 0.8;
-        transform: scale(1.05);
+    25%{
+        background-image: url(/pexels-kpaukshtite-1591159.jpg);
+        
     }
-    10% {
-        background-image: url(/pexels-karolina-grabowska-5422797.jpg);
-        opacity: 1;
-        transform: scale(1);
-    }
-    35% {
-        opacity: 0.8;
-        transform: scale(1.05);
-    }
-    40% {
+    50%{
         background-image: url(/deux.jpg);
-        opacity: 1;
-        transform: scale(1);
     }
-    65% {
-        opacity: 0.8;
-        transform: scale(1.05);
-    }
-    70% {
+    75%{
         background-image: url(/trois.jpg);
-        opacity: 1;
-        transform: scale(1);
     }
-    95% {
-        opacity: 0.8;
-        transform: scale(1.05);
-    }
-    100% {
+    100%{
         background-image: url(/quatres.jpg);
-        opacity: 1;
-        transform: scale(1);
     }
 }
-
 header > nav:nth-child(1){
     display: none;
 }
@@ -104,7 +84,7 @@ header > #burger{
 header > #burger span{
     color: #eee;
     padding: 20px;
-    font-size: 2.5rem;
+    font-size: 2rem;
     filter: drop-shadow(4px 4px 7px rgba(0, 0, 0, 0.712));
 }
 
@@ -118,9 +98,9 @@ header div{
 }
 
 header div h1{
-    font-size: 3.5rem;
+    font-size: 3.8rem;
     color: #eee;
-    font-family: "Rubik", sans-serif;
+    font-family: "Cormorant Upright", serif;
     font-weight: 400;
     letter-spacing: 4px;
     filter: drop-shadow(4px 4px 7px rgba(0, 0, 0, 0.692));
@@ -132,7 +112,7 @@ header div p{
     font-weight: 500;
     letter-spacing: 3px;
     filter: drop-shadow(4px 4px 7px rgba(0, 0, 0, 0.68));
-    font-size: 0.5rem;
+    font-size: 0.8rem;
 }
 
 header div button{
@@ -167,24 +147,24 @@ main > div:nth-child(1){
     padding: 50px 20px;
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: center;
     justify-content: center;
     gap: 50px;
 }
 
 main > div:nth-child(1) div:nth-child(1) h2{
-    font-family: "Nanum Myeongjo", serif;
-    font-weight: 600;
+    font-family: "Cormorant Upright", serif;
+    font-weight: 500;
     color: #444;
-    font-size: 1.6rem;
+    font-size: 2.7rem;
     margin-bottom: 10px;
 }
 
 main > div:nth-child(1) div:nth-child(1) p{
     font-family: "Rubik", sans-serif;
-    font-weight: 500;
-    color: #666;
-    font-size: 0.6rem;
+    font-weight: 400;
+    color: #333;
+    font-size: 1rem;
     letter-spacing: 1px;
 }
 
@@ -201,25 +181,56 @@ main > div:nth-child(1) div:nth-child(3){
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: start;
+    align-items: center;
     gap: 20px;
 }
 
 main > div:nth-child(1) div:nth-child(3) p{
-    color: #777;
-    font-size: 0.7rem;
+    color: #333;
+    font-size: 0.9rem;
     
 }
 
 main > div:nth-child(1) a{
-    text-decoration: none;
     color: #eee;
     font-family: "Rubik", sans-serif;
-    font-weight: 400;
-    
-    font-size: 0.6rem;
-    padding: 10px 25px;
-    letter-spacing: 1px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-size: 0.7rem;
+    padding: 15px 25px;
     background-color: #666;
     border: none;
+    text-decoration: none;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    width: 100%;
+    padding: 50px 20px 10px 20px;
+    background-color: #666;
+    color: #eee;
+}
+
+footer div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+footer div a{
+    text-decoration: none;
+    color: #eee;
+}
+
+
+footer div:nth-child(4){
+    justify-content: space-between;
+    font-size: 0.5rem;
+
 }
