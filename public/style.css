@@ -88,44 +88,61 @@ header > #cont_burger #burger{
     padding: 10px;
     margin: 20px;
     font-size: 2rem;
-    /* filter: drop-shadow(4px 4px 7px rgba(0, 0, 0, 0.712)); */
+    filter: drop-shadow(4px 4px 7px rgba(0, 0, 0, 0.712));
+    /* box-shadow: 0px 0px 30px rgba(227,228,237,0.37);
+    backdrop-filter: blur(10px);
+    mask-image: radial-gradient(circle, black 60%, transparent 100%);
+    -webkit-mask-image: radial-gradient(circle, black 60%, transparent 100%);
+    border-radius: 50px; */
+}
+
+.shadow{
     box-shadow: 0px 0px 30px rgba(227,228,237,0.37);
     backdrop-filter: blur(10px);
     mask-image: radial-gradient(circle, black 60%, transparent 100%);
     -webkit-mask-image: radial-gradient(circle, black 60%, transparent 100%);
-    border-radius: 50px;
+    
 }
 
 header #nav{
     position: absolute;
-    padding: 30px 20px;
-    left: -1px;
-    top: -1px;
-    width: 200px;
-    display: none;
+    right: 0px;
+    top: 100px;
+    width: 100px;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     gap: 20px;
-    box-shadow: 0px 0px 30px rgba(227,228,237,0.37);
-    backdrop-filter: blur(10px);
-    mask-image: radial-gradient(circle, black 60%, transparent 100%);
-    -webkit-mask-image: radial-gradient(circle, black 60%, transparent 100%);
 
-   
+
 }
 
 header #nav a{
     text-decoration: none;
     color: #eee;
-    padding: 10px 50px;
-    /* box-shadow: 0px 0px 30px rgba(227,228,237,0.37);
-    backdrop-filter: blur(10px);
-    mask-image: radial-gradient(circle, black 60%, transparent 100%);
-    -webkit-mask-image: radial-gradient(circle, black 60%, transparent 100%); */
-   
-    
+    padding: 5px;
+    filter: drop-shadow(4px 4px 7px rgba(0, 0, 0, 0.712));
+    font-size: 1.2rem;
+    transition: 0.1s linear;
+    transform: translateX(200px);
 }
+
+header #nav a:nth-child(1){
+
+    transition-delay: 0;
+}
+
+header #nav a:nth-child(2){
+    transition-delay: 0.1s;
+}
+
+header #nav a:nth-child(3){
+    transition-delay: 0.2s;
+}
+
+
+
 
 header div{
     display: flex;
@@ -143,6 +160,7 @@ header div h1{
     font-weight: 400;
     letter-spacing: 4px;
     filter: drop-shadow(4px 4px 7px rgba(0, 0, 0, 0.692));
+    margin: 0;
 }
 
 header div p{
@@ -152,6 +170,7 @@ header div p{
     letter-spacing: 3px;
     filter: drop-shadow(4px 4px 7px rgba(0, 0, 0, 0.68));
     font-size: 0.8rem;
+    margin-bottom: 20px;
 }
 
 header div button{
