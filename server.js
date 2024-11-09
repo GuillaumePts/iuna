@@ -18,14 +18,25 @@ function getImagePaths() {
   const imagesDir = path.join(__dirname, 'Public/img');
   return fs.readdirSync(imagesDir)
       .filter(file => /\.(jpg|jpeg|png|gif)$/i.test(file))
-      .map(file => `/Public/img/${file}`);
+      .map(file => `/img/${file}`);
 }
 
 
 app.get('/api/images', (req, res) => {
   const images = getImagePaths();
   res.json(images);
+  
 });
+
+// Routes pour les différents contenus de la page
+app.get('/content/contact', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views/contact.html'));
+});
+
+app.get('/content/accueil', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views/accueil.html'));
+});
+
 
 // Démarrer le serveur
 app.listen(port, () => {

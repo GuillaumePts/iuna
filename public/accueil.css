@@ -1,0 +1,69 @@
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main > div:nth-child(1){
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+main > div:nth-child(1) div:nth-child(1) h2{
+    font-family: "Cormorant Upright", serif;
+    font-weight: 500;
+    color: #444;
+    font-size: 2.7rem;
+    margin-bottom: 10px;
+}
+
+main > div:nth-child(1) div:nth-child(1) p{
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
+    color: #333;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+main > div:nth-child(1) #iuna{
+
+    background: url(/pexels-karolina-grabowska-5422797.jpg) center/cover no-repeat;
+    width: 100%;
+    max-width: 500px;
+    height: 500px
+
+}
+
+main > div:nth-child(1) div:nth-child(3){
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+main > div:nth-child(1) div:nth-child(3) p{
+    color: #333;
+    font-size: 0.9rem;
+    
+}
+
+main > div:nth-child(1) a{
+    color: #eee;
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-size: 0.7rem;
+    padding: 15px 25px;
+    background-color: #666;
+    border: none;
+    text-decoration: none;
+}
