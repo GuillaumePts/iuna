@@ -15,10 +15,10 @@ app.get('/', (req, res) => {
 
 
 function getImagePaths() {
-  const imagesDir = path.join(__dirname, 'Public/img');
+  const imagesDir = path.join(__dirname, 'Public/imgMob');
   return fs.readdirSync(imagesDir)
       .filter(file => /\.(jpg|jpeg|png|gif)$/i.test(file))
-      .map(file => `/img/${file}`);
+      .map(file => `/imgMob/${file}`);
 }
 
 

@@ -131,4 +131,24 @@ function loadContent(page) {
 
 
 
+document.addEventListener("DOMContentLoaded", function() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // L'élément entre dans la vue : ajoute la classe visible
+                entry.target.classList.add('visible');
+            } else {
+                // L'élément sort de la vue : retire la classe visible
+                entry.target.classList.remove('visible');
+            }
+        });
+    }, { threshold: 0.1 }); // Le seuil peut être ajusté
+
+    // Cible tous les paragraphes avec la classe "scroll-fade"
+    document.querySelectorAll('.scroll-fade').forEach(p => {
+        observer.observe(p);
+    });
+});
+
+
 
