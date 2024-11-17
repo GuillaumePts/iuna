@@ -6,16 +6,17 @@ main{
     background-color: #eee;
     flex-direction: column;
     min-height: 100vh;
-    padding: 150px 0;
+    padding-top: 50px;
 }
 
 main > div:nth-child(1){
-    padding: 50px 20px;
+    padding: 50px 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 50px;
+    width: 100%;
     
 }
 
@@ -42,7 +43,7 @@ main > div:nth-child(1) div:nth-child(1) h2{
     
 }
 
-main > div:nth-child(1) div:nth-child(1) p{
+main > div:nth-child(1) > div:nth-child(1) > p{
     font-family: "Rubik", sans-serif;
     font-weight: 500;
     color: #666;
@@ -54,30 +55,39 @@ main > div:nth-child(1) div:nth-child(1) p{
     text-align: center;
     width: 100%;
     transform: translate(-50%,-50%);
+    
     /* text-shadow: -2px 0px 2px #444; */
 }
 
 main > div:nth-child(1) #iuna{
 
     background: url(/img/iuna2.png) center/cover no-repeat;
-    width: 90%;
+    width: 100%;
     max-width: 500px;
-    height: 500px
-
+    height: 800px;
+    position : relative;
+    
 }
 
-main > div:nth-child(1) div:nth-child(3){
+ #iuna  div{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     gap: 20px;
+    position: absolute;
+    bottom: 0;
+    background: rgb(0,0,0);
+background: linear-gradient(359deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.726015406162465) 50%, rgba(0,0,0,0) 100%);
+    padding: 50px 20px;
+    
 }
 
-main > div:nth-child(1) div:nth-child(3) p{
-    color: #333;
-    font-size: 1.1rem;
-    text-align: center;
+ #iuna  div p{
+    color: #eee;
+    font-size: 1rem;
+
+    
 }
 
 main > div:nth-child(1) a{

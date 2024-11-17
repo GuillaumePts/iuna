@@ -100,15 +100,16 @@ function playCarrou(){
 
 
 
+// Système de menu
 function loadContent(page) {
     const mainContent = document.getElementById('main-content');
-    const cssLink = document.getElementById('dynamic-css'); // On suppose que l'ID du link est "dynamic-css"
+    const cssLink = document.getElementById('dynamic-css'); // L'ID du link est supposé être "dynamic-css"
     
     // Charger le contenu HTML de la page demandée
     fetch(`/content/${page}`)
         .then(response => response.text())
         .then(html => {
-            // Utiliser DOMParser pour interpréter le HTML
+            // Interpréter le HTML
             const parser = new DOMParser();
             const doc = parser.parseFromString(html, 'text/html');
             
@@ -118,37 +119,37 @@ function loadContent(page) {
                 mainContent.appendChild(node);
             });
 
-            // Mettre à jour la feuille de style CSS en fonction de la page
-            if (page === 'contact') {
-                cssLink.href = 'contact.css';
-            } else if (page === 'accueil') {
-                cssLink.href = 'accueil.css';
-            }
-            // Ajouter d'autres pages si nécessaire
+            // Mettre à jour la feuille de style CSS
+            cssLink.href = `${page}.css`;
+
+            // Réactiver l'animation sur les nouveaux éléments chargés
+            animvisible();
         })
         .catch(error => console.error('Erreur lors du chargement:', error));
 }
 
 
-
-document.addEventListener("DOMContentLoaded", function() {
+function animvisible() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // L'élément entre dans la vue : ajoute la classe visible
                 entry.target.classList.add('visible');
             } else {
-                // L'élément sort de la vue : retire la classe visible
                 entry.target.classList.remove('visible');
             }
         });
-    }, { threshold: 0.1 }); // Le seuil peut être ajusté
+    }, { threshold: 0.1 });
 
-    // Cible tous les paragraphes avec la classe "scroll-fade"
+    // Réinitialiser les observations
     document.querySelectorAll('.scroll-fade').forEach(p => {
         observer.observe(p);
     });
-});
+}
+
+
+// Initialisation
+animvisible();
+
 
 
 
