@@ -6,7 +6,7 @@ main{
     background-color: #eee;
     flex-direction: column;
     min-height: 100vh;
-    padding-top: 50px;
+    padding: 50px 10px 0px 10px
 }
 
 main > div:nth-child(1){

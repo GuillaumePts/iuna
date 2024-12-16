@@ -78,16 +78,6 @@ function playCarrou(){
         }else{
             count++
         }
-        // img.style.filter="blur(5px)  grayscale(100%)"
-        // img.style.opacity="0"
-        // // img.style.transform="translate(-50%,-50%) scale(1.5)"
-
-        // setTimeout(() => {
-        //     img.style.filter="blur(0px)  grayscale(0%)"
-        //     img.style.opacity="1"
-        //     // img.style.transform="translate(-50%,-50%) scale(1)"
-        // }, 300);
-        
     }, 5000);
 
     
@@ -97,13 +87,14 @@ function playCarrou(){
     
 }
 
-
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
 // Système de menu
 function loadContent(page) {
     const mainContent = document.getElementById('main-content');
-    const cssLink = document.getElementById('dynamic-css'); // L'ID du link est supposé être "dynamic-css"
+    const cssLink = document.getElementById('dynamic-css'); 
+    const scriptDyn = document.querySelector('#dynamic-script')
     
     // Charger le contenu HTML de la page demandée
     fetch(`/content/${page}`)
@@ -121,12 +112,15 @@ function loadContent(page) {
 
             // Mettre à jour la feuille de style CSS
             cssLink.href = `${page}.css`;
+            scriptDyn.src = `${page}.js`
 
             // Réactiver l'animation sur les nouveaux éléments chargés
             animvisible();
         })
         .catch(error => console.error('Erreur lors du chargement:', error));
 }
+
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
 function animvisible() {
@@ -149,6 +143,22 @@ function animvisible() {
 
 // Initialisation
 animvisible();
+
+function testnum(){
+    // Numéro de téléphone à composer
+const phoneNumber = "+1234567890";
+
+// Ouvrir l'application d'appel avec ce numéro
+window.location.href = `tel:${phoneNumber}`;
+}
+
+// ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+// URL de l'API ou de la ressource à récupérer
+const url = 'https://api.example.com/data';
+
+
+
 
 
 
