@@ -1,4 +1,4 @@
-main{
+#main-content{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -7,41 +7,175 @@ main{
     width: 100%;
 }
 
-main #dossiers{
+#main-content #dossiers{
     display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-direction: column;
+    padding-bottom: 150px;
+}
+
+#main-content #dossiers ul{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 20px;
-    flex-direction: column;
+    position: relative;
+    height: 400px;
 }
 
-.dossiers{
-    width: 250px;
-    height: 180px;
-    background-color: red;
+#main-content #dossiers ul h2{
+    font-family: "Cormorant Upright", serif;
+    font-weight: 800;
+    color: #666;
+    font-size: 4.5rem;
+    margin-bottom: 10px;
+    
+}
+
+#main-content #dossiers ul h3{
+    font-family: "Rubik", sans-serif;
+    font-weight: 600;
+    color: #666;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    width: 100%;
+    text-align: center;
+    
+}
+
+#main-content #dossiers ul p{
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+    color: #666;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    width: 100%;
+    text-align: center;
+    
+}
+
+.dossier{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    position: relative;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0px 0px 20px 0px #0000004f;
+}
+
+.dossier::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    z-index: 2;
 }
 
 
-main #dossiers div h2{
-    color: black;
+#main-content #dossiers div img{
+    width: 100%;
+    
 }
 
-main #photos {
-    display: flex;
+#main-content #dossiers div h2{
+    z-index: 3;
+    color: #fff;
+    text-shadow: 0px 0px 20px black;
+    text-transform: capitalize;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#main-content #photos {
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 20px;
     width: 100%;
-    padding: 100px 0;
+    padding: 100px 10px;
+    position: relative;
+    clip-path: inset(0);
+    
 }
 
-main #photos img{
-    width: 300px;
+#main-content #photos #return{
+    width: 60px;
+    height: 60px;
+    border-bottom-left-radius: 20px;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    border: none;
+    background-color: #fff;
+    box-shadow: 0px 0px 20px 0px #0000004f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+#main-content #photos img{
+    width: 100%;
+}
+
+
+main #navigation{
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #eee;
+    z-index: 10;
+    bottom: 0;
+    height: 70px;
+    box-shadow: -1px 9px 20px 20px #00000052;
+}
+
+main #navigation ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 40%;
+}
+
+main #navigation ul > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+main #navigation ul div a{
+    text-decoration: none;
+    color: #666;
+    font-family: "Rubik", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+}
+
+main #navigation #admin{
+    transform:translateY(-20%);
+    border-radius: 40px;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    z-index: 11;
+
 }

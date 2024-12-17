@@ -4,7 +4,7 @@
     background-size: cover;
 }
 
-main{
+#main-content{
     min-height: 100vh;
     background-color: #eee;
     width: 100%;
@@ -14,7 +14,7 @@ main{
     align-items: center;
 }
 
-main > div:nth-child(1){
+#main-content > div:nth-child(1){
     position: relative;
     display: flex;
     justify-content: center;
@@ -23,7 +23,7 @@ main > div:nth-child(1){
 
 }
 
-main > div:nth-child(1) > div:nth-child(1){
+#main-content > div:nth-child(1) > div:nth-child(1){
     
     width: 100%;
     height: 500px;
@@ -31,7 +31,7 @@ main > div:nth-child(1) > div:nth-child(1){
     
 }
 
-main > div:nth-child(1) > div:nth-child(2){
+#main-content > div:nth-child(1) > div:nth-child(2){
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -50,7 +50,7 @@ main > div:nth-child(1) > div:nth-child(2){
 
 }
 
-main > div:nth-child(1) > div:nth-child(2) h2{
+#main-content > div:nth-child(1) > div:nth-child(2) h2{
     font-family: "Cormorant Upright", serif;
     font-weight: 500;
     color: #666;
@@ -59,7 +59,7 @@ main > div:nth-child(1) > div:nth-child(2) h2{
 }
 
 
-main > div:nth-child(1) > div:nth-child(2) > div{
+#main-content > div:nth-child(1) > div:nth-child(2) > div{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -72,7 +72,7 @@ main > div:nth-child(1) > div:nth-child(2) > div{
 }
 
 
-main > div:nth-child(1) > div:nth-child(2) div a{
+#main-content > div:nth-child(1) > div:nth-child(2) div a{
     font-family: "Rubik", sans-serif;
     font-weight: 500;
     color: #666;
@@ -85,7 +85,7 @@ main > div:nth-child(1) > div:nth-child(2) div a{
     gap: 20px;
 }
 
-main > div:nth-child(2){
+#main-content > div:nth-child(2){
     width: 100%;
     position: relative;
     display: flex;
@@ -94,14 +94,14 @@ main > div:nth-child(2){
     align-items: center;
 }
 
-main > div:nth-child(2) > div:nth-child(1){
+#main-content > div:nth-child(2) > div:nth-child(1){
     background-image: url(/imgPc/bateau.jpg);
     width: 100%;
     height: 700px;
     background-position: left;
 }
 
-main > div:nth-child(2) > #form{
+#main-content > div:nth-child(2) > #form{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -119,7 +119,8 @@ main > div:nth-child(2) > #form{
     max-width: 600px;
 }
 
-main > div:nth-child(2) > #form::before{
+
+#main-content> div:nth-child(2) > #form::before{
     content: '';
     position: absolute;
     top: 0;
@@ -131,7 +132,7 @@ main > div:nth-child(2) > #form::before{
     z-index: 0; /* Met le flou en arrière-plan */
 }
 
-main > div:nth-child(2) > #form div{
+#main-content > div:nth-child(2) > #form div{
     width: 90%;
     margin: 0 auto;
     display: flex;
@@ -142,7 +143,7 @@ main > div:nth-child(2) > #form div{
     z-index: 1;
 }
 
-main > div:nth-child(2) > #form div p{
+#main-content > div:nth-child(2) > #form div p{
     font-family: "Rubik", sans-serif;
     font-weight: 500;
     color: #eee;
@@ -151,7 +152,7 @@ main > div:nth-child(2) > #form div p{
     filter: drop-shadow(4px 4px 7px rgba(0, 0, 0, 0.68));
 }
 
-main > div:nth-child(2) > #form div input{
+#main-content > div:nth-child(2) > #form div input{
     border: none;
     width: 100%;
     height: 50px;
@@ -165,7 +166,7 @@ main > div:nth-child(2) > #form div input{
 }
 
 
-main > div:nth-child(2) > #form div textarea{
+#main-content > div:nth-child(2) > #form div textarea{
     border : none;
     width: 100%;
     height: 100px;
@@ -180,7 +181,7 @@ main > div:nth-child(2) > #form div textarea{
     padding-top: 20px;
 }
 
-main > div:nth-child(2) > #form button{
+#main-content > div:nth-child(2) > #form button{
     color: #eee;
     font-family: "Rubik", sans-serif;
     font-weight: 500;
@@ -194,5 +195,55 @@ main > div:nth-child(2) > #form button{
     margin-top:10px
 }
 
+
+
+main #navigation{
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #eee;
+    z-index: 10;
+    bottom: 0;
+    height: 70px;
+    box-shadow: -1px 9px 20px 20px #00000052;
+}
+
+main #navigation ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 40%;
+}
+
+main #navigation ul > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+main #navigation ul div a{
+    text-decoration: none;
+    color: #666;
+    font-family: "Rubik", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+}
+
+main #navigation #admin{
+    transform:translateY(-20%);
+    border-radius: 40px;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    z-index: 11;
+
+}
 
 

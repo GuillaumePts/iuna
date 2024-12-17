@@ -8,35 +8,6 @@ let tabImg = []
 
 loadImages()
 
-burger.addEventListener("click",()=>{
-    let el = burger.textContent
-    menu(el)
-})
-
-function menu(arg){
-    if(arg === 'menu_open'){
-
-        burger.textContent="tab_close_right" 
-        for (let i = 0; i < a.length; i++) {
-            const el = a[i];
-            el.style.transform=`translateX(0px)`
-        }
-        
-
-    }else if(arg === 'tab_close_right'){
-        burger.textContent="menu_open"
-        let x = 200
-        for (let i = 0; i < a.length; i++) {
-            const el = a[i];
-            x+=20
-            el.style.transform=`translateX(${x}px)`
-            el.classList.remove('shadow')
-        }
-        
-    }else{
-        arg === 'menu_open'
-    }
-}
 
 
 async function loadImages() {
@@ -105,7 +76,7 @@ function loadContent(page) {
             const doc = parser.parseFromString(html, 'text/html');
             
             // Effacer le contenu actuel et ajouter le nouveau contenu
-            mainContent.innerHTML = '';
+            mainContent.textContent = '';
             Array.from(doc.body.childNodes).forEach(node => {
                 mainContent.appendChild(node);
             });
