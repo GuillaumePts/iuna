@@ -1,13 +1,5 @@
 
-#main-content{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #eee;
-    flex-direction: column;
-    min-height: 100vh;
-    padding: 50px 10px 0px 10px
-}
+
 
 #main-content > div:nth-child(1){
     padding: 50px 0px;
@@ -66,6 +58,10 @@
     max-width: 500px;
     height: 800px;
     position : relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
     
 }
 
@@ -78,14 +74,14 @@
     position: absolute;
     bottom: 0;
     background: rgb(0,0,0);
-background: linear-gradient(359deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.726015406162465) 50%, rgba(0,0,0,0) 100%);
-    padding: 50px 20px;
+    background: linear-gradient(359deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.726015406162465) 50%, rgba(0,0,0,0) 100%);
     
 }
 
  #iuna  div p{
     color: #eee;
     font-size: 1rem;
+    margin: 0 20px;
 
     
 }
@@ -103,52 +99,4 @@ background: linear-gradient(359deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7260154061624
 }
 
 
-main #navigation{
-    position: fixed;
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: #eee;
-    z-index: 10;
-    bottom: 0;
-    height: 70px;
-    box-shadow: -1px 9px 20px 20px #00000052;
-}
-
-main #navigation ul{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    width: 40%;
-}
-
-main #navigation ul > div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-}
-
-main #navigation ul div a{
-    text-decoration: none;
-    color: #666;
-    font-family: "Rubik", sans-serif;
-    font-weight: 700;
-    font-size: 0.7rem;
-}
-
-main #navigation #admin{
-    transform:translateY(-20%);
-    border-radius: 40px;
-    background-color: #eee;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5px;
-    z-index: 11;
-
-}
 

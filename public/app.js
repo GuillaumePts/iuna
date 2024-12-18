@@ -51,44 +51,83 @@ function playCarrou(){
         }
     }, 5000);
 
-    
-    
-
-
-    
 }
 
 // ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+// css dynamique
 
+function dynamicCss(css){
+    const leslinks = document.querySelectorAll('.dynamic-css')
+    console.log(css);
+    leslinks.forEach(link=>{
+        if(link.id === css){
+            console.log(link);
+            console.log(link.id);
+            link.rel = 'stylesheet';
+            link.media = "all"
+        }else{
+            link.media = "none"
+        }
+        
+    })
+}
 
-// Système de menu
+// // Pré-charger toutes les pages HTML lors du chargement du site
+const htmlCache = {};
+
+function preloadHTMLPages() {
+    const pages = ['accueil', 'portfolio', 'contact']; // Liste des pages que vous voulez précharger
+    const promises = pages.map(page => {
+        return fetch(`/content/${page}`).then(response => response.text()).then(html => {
+            htmlCache[page] = html;  // Stocker les pages dans le cache
+        });
+    });
+
+    // Attendre que toutes les pages soient chargées
+    Promise.all(promises).then(() => {
+        console.log('Toutes les pages ont été préchargées');
+    }).catch(error => {
+        console.error('Erreur lors du préchargement des pages:', error);
+    });
+}
+
+// Appeler cette fonction lors du chargement du site
+preloadHTMLPages();
+
+// menu dynamique 
 function loadContent(page) {
     const mainContent = document.getElementById('main-content');
-    const cssLink = document.getElementById('dynamic-css'); 
-    const scriptDyn = document.querySelector('#dynamic-script')
+    const scriptDyn = document.querySelector('#dynamic-script');
+
+    mainContent.style.opacity = 0
+    setTimeout(() => {
+        mainContent.style.opacity = 1
+    }, 100);
     
-    // Charger le contenu HTML de la page demandée
-    fetch(`/content/${page}`)
-        .then(response => response.text())
-        .then(html => {
-            // Interpréter le HTML
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(html, 'text/html');
-            
-            // Effacer le contenu actuel et ajouter le nouveau contenu
-            mainContent.textContent = '';
-            Array.from(doc.body.childNodes).forEach(node => {
-                mainContent.appendChild(node);
-            });
+    // Vérifier si la page est dans le cache
+    if (htmlCache[page]) {
+        const html = htmlCache[page];
 
-            // Mettre à jour la feuille de style CSS
-            cssLink.href = `${page}.css`;
-            scriptDyn.src = `${page}.js`
+        // Interpréter le HTML
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        
+        // Effacer le contenu actuel et ajouter le nouveau contenu
+        mainContent.textContent = '';
+        Array.from(doc.body.childNodes).forEach(node => {
+            scriptDyn.src = `${page}.js`;
+            dynamicCss(page);
+            mainContent.appendChild(node);
+        });
 
-            // Réactiver l'animation sur les nouveaux éléments chargés
-            animvisible();
-        })
-        .catch(error => console.error('Erreur lors du chargement:', error));
+        // Mettre à jour la feuille de style CSS
+        
+
+        // Réactiver l'animation sur les nouveaux éléments chargés
+        animvisible();
+    } else {
+        console.error(`Page ${page} non trouvée dans le cache.`);
+    }
 }
 
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
