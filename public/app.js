@@ -76,14 +76,14 @@ function dynamicCss(css){
 const htmlCache = {};
 
 function preloadHTMLPages() {
-    const pages = ['accueil', 'portfolio', 'contact']; // Liste des pages que vous voulez précharger
+    const pages = ['accueil', 'portfolio', 'contact']; 
     const promises = pages.map(page => {
         return fetch(`/content/${page}`).then(response => response.text()).then(html => {
-            htmlCache[page] = html;  // Stocker les pages dans le cache
+            htmlCache[page] = html;  
         });
     });
 
-    // Attendre que toutes les pages soient chargées
+    
     Promise.all(promises).then(() => {
         console.log('Toutes les pages ont été préchargées');
     }).catch(error => {
@@ -91,7 +91,6 @@ function preloadHTMLPages() {
     });
 }
 
-// Appeler cette fonction lors du chargement du site
 preloadHTMLPages();
 
 // menu dynamique 
@@ -104,26 +103,20 @@ function loadContent(page) {
         mainContent.style.opacity = 1
     }, 100);
     
-    // Vérifier si la page est dans le cache
+    
     if (htmlCache[page]) {
         const html = htmlCache[page];
-
-        // Interpréter le HTML
+        
         const parser = new DOMParser();
         const doc = parser.parseFromString(html, 'text/html');
         
-        // Effacer le contenu actuel et ajouter le nouveau contenu
         mainContent.textContent = '';
         Array.from(doc.body.childNodes).forEach(node => {
             scriptDyn.src = `${page}.js`;
             dynamicCss(page);
             mainContent.appendChild(node);
         });
-
-        // Mettre à jour la feuille de style CSS
-        
-
-        // Réactiver l'animation sur les nouveaux éléments chargés
+      
         animvisible();
     } else {
         console.error(`Page ${page} non trouvée dans le cache.`);
