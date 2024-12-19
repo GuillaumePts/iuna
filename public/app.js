@@ -1,4 +1,3 @@
-console.log('hello world')
 
 const burger = document.querySelector('#burger')
 const nav = document.querySelector('#nav')
@@ -58,11 +57,8 @@ function playCarrou(){
 
 function dynamicCss(css){
     const leslinks = document.querySelectorAll('.dynamic-css')
-    console.log(css);
     leslinks.forEach(link=>{
         if(link.id === css){
-            console.log(link);
-            console.log(link.id);
             link.rel = 'stylesheet';
             link.media = "all"
         }else{
@@ -83,9 +79,7 @@ function preloadHTMLPages() {
         });
     });
 
-    
     Promise.all(promises).then(() => {
-        console.log('Toutes les pages ont été préchargées');
     }).catch(error => {
         console.error('Erreur lors du préchargement des pages:', error);
     });
@@ -96,7 +90,6 @@ preloadHTMLPages();
 // menu dynamique 
 function loadContent(page) {
     const mainContent = document.getElementById('main-content');
-    const scriptDyn = document.querySelector('#dynamic-script');
 
     mainContent.style.opacity = 0
     setTimeout(() => {
@@ -112,7 +105,6 @@ function loadContent(page) {
         
         mainContent.textContent = '';
         Array.from(doc.body.childNodes).forEach(node => {
-            scriptDyn.src = `${page}.js`;
             dynamicCss(page);
             mainContent.appendChild(node);
         });
@@ -157,8 +149,11 @@ window.location.href = `tel:${phoneNumber}`;
 
 // ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-// URL de l'API ou de la ressource à récupérer
-const url = 'https://api.example.com/data';
+
+
+
+
+
 
 
 
